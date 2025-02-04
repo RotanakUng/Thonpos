@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="./428000935_407345978483077_2019178187159321682_n.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pos.css">
+
+  <title>Transcent Profumo</title>
+</head>
+
+<style>
+  #headingphoto {
+    align-items: center; 
+  }
+</style>
+<body>
+  <div class="form-container">
+    <h2 id="heading">CUSTOMER INFORMATION <img id="headingphoto" src="./428000935_407345978483077_2019178187159321682_n.jpg" width="50px">   </h2>
+    <form id="customer-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="From">From:</label>
+      <select id="from" name="from" required>
+        <option value="">-- Please Select --</option>
+        <option value="FB">FB</option>
+        <option value="IG">IG</option>
+        <option value="TELEGRAM">TELEGRAM</option>
+        <option value="PICKUP">PICKUP</option>
+      </select>
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="service">Select a Service:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Please Select --</option>
+        <option value="VET">VET</option>
+        <option value="COD">COD</option>
+        <option value="GRAB">GRAB</option>
+        <option value="PICKUP">PICKUP</option>
+      </select>
+
+      <label for="type">Payment Type:</label>
+      <select id="type" name="type" required>
+        <option value="">-- Please Select --</option>
+        <option value="ABA">ABA</option>
+        <option value="Wings">Wings</option>
+        <option value="Truemoney">Truemoney</option>
+        <option value="Cash">Cash</option>
+      </select>
+
+      <label for="products">Products:</label>
+      <input type="text" id="products" name="products" required>
+
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="">-- Please Select --</option>
+        <option value="Fullfilled">Fullfilled</option>
+        <option value="Unfullfilled">Unfullfilled</option>
+      </select>
+
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="price" required>
+
+      <label for="Payment">Select a Payment:</label>
+      <select id="payment" name="payment" required>
+        <option value="">-- Please Select --</option>
+        <option value="Unpaid">Unpaid</option>
+        <option value="Paid">Paid</option>
+        <option value="Paid-50%">Paid 50%</option>
+      </select>
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('customer-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+    
+        const name = document.getElementById('name').value;
+        const from = document.getElementById('from').value;
+        const address = document.getElementById('address').value;
+        const phone = document.getElementById('phone').value;
+        const type = document.getElementById('type').value;
+        const products = document.getElementById('products').value;
+        const service = document.getElementById('service').value;
+        const status = document.getElementById('status').value;
+        const price = document.getElementById('price').value;
+        const payment = document.getElementById('payment').value;
+    
+        // Replace this URL with your Google Form's submission URL
+        const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdw-v2g8J8SLZ2Fo5v1q5-Gx9WNKv9YxVTOhVNyJWQafEBBWg/formResponse";
+    
+        // Replace the entry IDs with the actual entry IDs from your Google Form
+        const formData = new URLSearchParams();
+        formData.append("entry.1890945617", name); // Name field
+        formData.append("entry.2001094795", from); // From field
+        formData.append("entry.603447813", address); // Address field
+        formData.append("entry.962888761", phone); // Phone field
+        formData.append("entry.1201125097", type); // Type field
+        formData.append("entry.1548588991", products); // Products field    
+        formData.append("entry.472502467", service); // Service field
+        formData.append("entry.1786915530", status); // Status field
+        formData.append("entry.1100783083", price); // Price field
+        formData.append("entry.330753012", payment); // Payment field
+    
+        // Submit the form data
+        fetch(formURL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        }).then(() => {
+         document.getElementById('customer-form').reset();
+        }).catch((error) => {
+          alert('Error submitting the form. Please try again.');
+          console.error(error);
+        });
+      });
+</script>
+</body>
+
+</html>

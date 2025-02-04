@@ -1,118 +1,62 @@
 body {
-    font-family: 'times new roman';
-    background: linear-gradient(135deg, #ffffff, #535151);
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f9f9f9;
     margin: 0;
-  }
-  
-  .form-container {
-    background-color: white;
-    padding: 50px;
-    padding-top: -0px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Increased width to accommodate two columns */
-    width: 100%;
-    position: relative;
-    border: 5px solid transparent;
-    background-clip: padding-box; /* Ensures the background color doesn't cover the border */
-  }
-  
-  .form-container::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-    background: linear-gradient(135deg, #3498db, #9b59b6, #e74c3c);
-    border-radius: 10px; /* Slightly larger to account for the border */
-  }
-  
-  h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+.lock-screen {
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Space between columns */
-  }
-  
-  .form-column {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 500;
-    color: #34495e;
-  }
-  
-  input[type="text"],
-  select {
-    width: 100%;
+    background-color: white;
+    padding: 100px 100px;
+    border: 2px solid #2c35af;
+    border-width: 4px;
+    border-radius: 23px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 350px;
+}
+
+input[type="password"] {
     padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ddd;
+    margin: 15px 0;
+    width: 90%;
+    border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
-    height: 40px; /* Ensure consistent height */
-    box-sizing: border-box; /* Ensure padding is included in the height */
-  }
+    transition: all 0.3s ease;
+}
 
-  input[type="text"]:hover
-  {
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
-  }
-  
-  input[type="text"]:focus,
-  select:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+input[type="password"]:focus {
+    border-color: #007bff;
     outline: none;
-  }
-  
-  button {
-    background: linear-gradient(135deg, #4c1abe, #9b59b6, #e74c3c);
-    color: white;
-    padding: 12px 15px;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 12px 25px;
     border: none;
+    background-color: #007bff;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  button:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-  }
-  
-  button:active {
-    transform: translateY(0);
-  }
-  
-  /* Optional: Add a subtle animation to the form container */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
